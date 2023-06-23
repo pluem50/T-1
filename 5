@@ -1,0 +1,25 @@
+5.2 INSERT INTO Branch (BranchID, BranchName, Country)
+    VALUES (1, 'Chiang Mai', 'Thailand'),
+    (2, 'Chiang rai', 'Thailand'),
+    (3, 'Phuket', 'Thailand')
+5.3 DELETE FROM Employee
+    WHERE JobTitle = 'Sale'
+5.4 UPDATE Branch
+    SET BranchName = 'Nagoya'
+    WHERE BranchName = 'Japan'
+5.5 SELECT e.EmployeeID, e.Name, e.JobTitle, d.Name AS DepartmentName, b.BranchName
+    FROM Employee e
+    INNER JOIN Department d ON e.DepartmentID = d.DepartmentID
+    INNER JOIN Branch b ON e.BranchID = b.BranchID
+5.6 SELECT e.EmployeeID, e.Name, e.JobTitle, b.BranchName
+    FROM Employee e
+    INNER JOIN Branch b ON e.BranchID = b.BranchID
+    WHERE b.BranchName = 'Bangkok' OR b.BranchName = 'Suvarnabhumi'
+5.7 SELECT e.EmployeeID, e.Name, e.JobTitle, b.BranchName, b.Country
+    FROM Employee e
+    INNER JOIN Branch b ON e.BranchID = b.BranchID
+    WHERE b.BranchName = 'Bangkok' AND e.JobTitle = 'Programmer'
+5.8 SELECT e.EmployeeID, e.Name, e.JobTitle, d.Name AS DepartmentName, b.BranchName
+    FROM Employee e
+    INNER JOIN Department d ON e.DepartmentID = d.DepartmentID
+    INNER JOIN Branch b ON e.BranchID = b.BranchID
